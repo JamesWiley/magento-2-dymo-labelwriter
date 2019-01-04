@@ -7,13 +7,14 @@
  * http://www.labelwriter.com/software/dls/sdk/samples/js/PrintLabel/PrintLabel.html
  */
 //load the Dymo Label XML file as a dependency
-define(['jquery', 'dymoFramework', "text!../assets/label.label"], function ($, dymo, dymoLabel) {
+define(['jquery', 'dymoFramework', "text!../assets/pricetag.label"], function ($, dymo, dymoLabel) {
     "use strict";
 
     //first printer that is available
     var mainPrinter = null;
     //the target .label file
     var label = null;
+
 
     /**
      * Gets all available Dymo printers by the Dymo SDK.
@@ -41,27 +42,30 @@ define(['jquery', 'dymoFramework', "text!../assets/label.label"], function ($, d
     function loadLabel() {
         if (dymoLabel) {
             label = dymo.label.framework.openLabelXml(dymoLabel);
-            // check if the .label file has an address object
-            if (label.getAddressObjectCount() == 0) {
-                console.log('Label file (\'../assets/label.label\') does not contain an address object.');
-                return;
-            }
+
             console.log('Label loaded.');
         }
 
     }
 
     /**
-     * Sets the address of the .label file.
-     * @param string address The address
+     * Sets the text of the .label file.
+     * @param string toptext
      * @returns {*}
      */
-    function setAddress(address) {
-        if (!label || label.getAddressObjectCount() == 0) {
-            return;
-        }
+    function setTopText(toptext) {
         //Dymo label SDK function
-        return label.setAddressText(0, address);
+        return label.setObjectText("Top Text", toptext);
+    }
+
+    /**
+     * Sets the text of the .label file.
+     * @param string toptext
+     * @returns {*}
+     */
+    function setBottomText(bottomtext) {
+        //Dymo label SDK function
+        return label.setObjectText("Bottom Text", bottomtext);
     }
 
     return ({
@@ -79,7 +83,7 @@ define(['jquery', 'dymoFramework', "text!../assets/label.label"], function ($, d
     /**
      * Starts the print action if a printer is present and if a .label file is loaded.
      */
-    function printLabel(address) {
+    function printLabel(toptext, bottomtext) {
         if (!mainPrinter) {
             console.log('No printer available.');
             return;
@@ -90,10 +94,10 @@ define(['jquery', 'dymoFramework', "text!../assets/label.label"], function ($, d
             return;
         }
 
-        setAddress(address);
+        setTopText(toptext);
+        setBottomText(bottomtext);
         //Dymo label SDK function
         label.print(mainPrinter.name);
-
     }
 
     function isLoaded() {

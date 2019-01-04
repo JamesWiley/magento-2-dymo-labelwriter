@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <action name="mass_print_retail_tags">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">mass_print_retail_tags</item>
+                        <item name="label" xsi:type="string" translate="true">Print Retail Tags</item>
+                    </item>
+                </argument>
+            </action>
+            <action name="mass_print_web_tags">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">mass_print_web_tags</item>
+                        <item name="label" xsi:type="string" translate="true">Print Web Tags</item>
+                    </item>
+                </argument>
+            </action>
+            <action name="mass_print_intl_tags">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">mass_print_intl_tags</item>
+                        <item name="label" xsi:type="string" translate="true">Print Intl Tags</item>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+    </listingToolbar>
+</listing>

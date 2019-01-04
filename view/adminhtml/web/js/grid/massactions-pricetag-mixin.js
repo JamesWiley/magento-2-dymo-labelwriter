@@ -10,13 +10,13 @@ define([
     //init printer and label
     wdevsDymo.loadSettings();
 
-    function printTag(entityId, priceType, authToken){
+    function printTag(sku, authToken){
         var defer = $.Deferred();
-        wdevsPriceTagFormatter.getTagInfoByEntityId(entityId, priceType, authToken).done(function(top, bottom){
+        wdevsPriceTagFormatter.getTagInfoBySku(sku, authToken).done(function(top, bottom){
             wdevsDymo.printLabel(top, bottom);
 
             //uncheck the checkboxes
-            var checkboxId = 'idscheck'+entityId;
+            var checkboxId = 'idscheck'+sku;
             if($('input:checkbox[id^='+checkboxId+']:checked').length){
                 $('input:checkbox[id^='+checkboxId+']:checked').click();
             }
@@ -58,21 +58,9 @@ define([
              */
             defaultCallback: function (action, data) {
 
-                if ((action.type == 'mass_print_retail_tags') ||
-                    (action.type == 'mass_print_web_tags') ||
-                    (action.type == 'mass_print_intl_tags')) {
+                if (action.type == 'mass_print_dymo_labels') {
                     //close the dropdown
                     this.opened(false);
-                    var priceType;
-                    if (action.type == 'mass_print_retail_tags'){
-                        priceType = 3;
-                    }
-                    if (action.type == 'mass_print_web_tags'){
-                        priceType = 5;
-                    }
-                    if (action.type == 'mass_print_intl_tags'){
-                        priceType = 6;
-                    }
 
                     if (data.hasOwnProperty('selected')) {
                         if (data.selected.length > 0) {
@@ -113,8 +101,8 @@ define([
                                     var printedTags = [];
                                     if (tokenData.hasOwnProperty('authToken')) {
                                         var authToken = tokenData.authToken;
-                                        $.each(data.selected, function (index, entityId) {
-                                            var printedTag = printTag(entityId, priceType, authToken);
+                                        $.each(data.selected, function (index, data.sku) {
+                                            var printedTag = printTag(data.sku, authToken);
                                             printedTags.push(printedTag);
                                         });
 

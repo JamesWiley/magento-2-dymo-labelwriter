@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DieCutLabel Version="8.0" Units="twips" MediaType="Default">
+  <PaperOrientation>Landscape</PaperOrientation>
+  <Id>PriceTag</Id>
+  <PaperName>30373 Price Tag Label - offset</PaperName>
+  <DrawCommands>
+    <Path>
+      <FillMode>EvenOdd</FillMode>
+      <Line X1="180" Y1="0" X2="1171" Y2="0"/>
+      <Arc CenterX="1171" CenterY="180" Radius="180" StartAngle="90" EndAngle="0"/>
+      <LineTo X="1351" Y="1351"/>
+      <LineTo X="517" Y="1351"/>
+      <Arc CenterX="517" CenterY="1463" Radius="112" StartAngle="90" EndAngle="180"/>
+      <LineTo X="405" Y="2685"/>
+      <LineTo X="293" Y="2880"/>
+      <LineTo X="181" Y="2685"/>
+      <LineTo X="181" Y="1463"/>
+      <Arc CenterX="69" CenterY="1463" Radius="112" StartAngle="0" EndAngle="90"/>
+      <LineTo X="0" Y="1351"/>
+      <LineTo X="0" Y="180"/>
+      <Arc CenterX="180" CenterY="180" Radius="180" StartAngle="180" EndAngle="90"/>
+    </Path>
+  </DrawCommands>
+  <ObjectInfo>
+    <TextObject>
+      <Name>Top Text</Name>
+      <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>
+      <BackColor Alpha="0" Red="255" Green="255" Blue="255"/>
+      <LinkedObjectName></LinkedObjectName>
+      <Rotation>Rotation0</Rotation>
+      <IsMirrored>False</IsMirrored>
+      <IsVariable>True</IsVariable>
+      <HorizontalAlignment>Center</HorizontalAlignment>
+      <VerticalAlignment>Middle</VerticalAlignment>
+      <TextFitMode>ShrinkToFit</TextFitMode>
+      <UseFullFontHeight>True</UseFullFontHeight>
+      <Verticalized>False</Verticalized>
+      <StyledText>
+        <Element>
+          <String>SKUText
+$XX,XXX.XX</String>
+          <Attributes>
+            <Font Family="Arial" Size="12" Bold="True" Italic="False" Underline="False" Strikeout="False"/>
+            <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>
+          </Attributes>
+        </Element>
+      </StyledText>
+    </TextObject>
+    <Bounds X="72" Y="72" Width="1008" Height="576"/>
+  </ObjectInfo>
+  <ObjectInfo>
+    <TextObject>
+      <Name>Bottom Text</Name>
+      <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>
+      <BackColor Alpha="0" Red="255" Green="255" Blue="255"/>
+      <LinkedObjectName></LinkedObjectName>
+      <Rotation>Rotation0</Rotation>
+      <IsMirrored>False</IsMirrored>
+      <IsVariable>True</IsVariable>
+      <HorizontalAlignment>Center</HorizontalAlignment>
+      <VerticalAlignment>Middle</VerticalAlignment>
+      <TextFitMode>ShrinkToFit</TextFitMode>
+      <UseFullFontHeight>True</UseFullFontHeight>
+      <Verticalized>False</Verticalized>
+      <StyledText>
+        <Element>
+          <String>Metal
+Line 2
+Line 3
+Dimensions</String>
+          <Attributes>
+            <Font Family="Arial" Size="12" Bold="True" Italic="False" Underline="False" Strikeout="False"/>
+            <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>
+          </Attributes>
+        </Element>
+      </StyledText>
+    </TextObject>
+    <Bounds X="72" Y="720" Width="1008" Height="576"/>
+  </ObjectInfo>
+</DieCutLabel>

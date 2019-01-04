@@ -5,7 +5,7 @@ var config = {
     map: {
         '*': {
             wdevsDymo: 'Wdevs_Dymo/js/main',
-            wdevsAddressFormater: 'Wdevs_Dymo/js/address.formatter'
+            wdevsPriceTagFormatter: 'Wdevs_Dymo/js/pricetag.formatter'
         }
     },
     shim: {

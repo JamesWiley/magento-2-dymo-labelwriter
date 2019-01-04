@@ -32,6 +32,7 @@ class Token extends \Magento\Customer\Controller\AbstractAccount
 
     public function execute()
     {
+        // TODO: update this to check for Admin Product Listing Authorization
         $isAllowed = $this->authorization->isAllowed('Magento_Sales::sales');
         $result = $this->resultFactory->create(ResultFactory::TYPE_JSON);
 
